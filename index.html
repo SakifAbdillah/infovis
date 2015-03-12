@@ -13,12 +13,77 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANln09l2wflbNzL5kXlOkb4cuURGYMlvs"></script>
 	<script>
 		window.onload = function(){
+			var MY_MAPTYPE_ID = 'styled';
+
+			var featureOpts = [
+				{
+					"featureType": "administrative",
+					"stylers": [
+					{ "visibility": "off" }
+					]
+				},{
+					"featureType": "landscape.natural",
+					"stylers": [
+					{ "visibility": "off" }
+					]
+				},{
+					"featureType": "road",
+					"elementType": "geometry",
+					"stylers": [
+					{ "color": "#c2c5c2" }
+					]
+				},{
+					"featureType": "poi",
+					"stylers": [
+					{ "visibility": "off" }
+					]
+				},{
+					"featureType": "transit",
+					"stylers": [
+					{ "visibility": "off" }
+					]
+				},{
+					"featureType": "road",
+					"elementType": "labels",
+					"stylers": [
+					{ "visibility": "off" }
+					]
+				},{
+					"featureType": "water",
+					"elementType": "labels",
+					"stylers": [
+					{ "visibility": "off" }
+					]
+				},{
+					"featureType": "water",
+					"stylers": [
+					{ "color": "#a7a7a7" }
+					]
+				}
+			];
 			var mapOptions = {
 				zoom: 12,
-				center: new google.maps.LatLng(52.376078, 4.894151)
+				center: new google.maps.LatLng(52.376078, 4.894151),
+				mapTypeId: MY_MAPTYPE_ID
 			};
+			var styledMapOptions = {
+				name: 'Custom Style'
+			};
+
+			var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+			
 			var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+
+			map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+
 			map.data.loadGeoJson('amsterdamRegion.geojson');
+			map.data.setStyle({
+				strokeWeight : 1,
+				fillOpacity: 0.2
+			});
+			map.data.addListener("mouseover", function(event){
+				console.log(event.feature.k.bcnaam);
+			})
 		}
 	</script>
 </body>
