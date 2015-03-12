@@ -2,10 +2,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+	*{margin: 0px; padding: 0px}
+	#map-canvas{width: 100%; height: 100%; display: block;}
+	</style>
 </head>
 <body>
-
+	<div id="map-canvas"></div>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANln09l2wflbNzL5kXlOkb4cuURGYMlvs"></script>
+	<script>
+		window.onload = function(){
+			var mapOptions = {
+				zoom: 12,
+				center: new google.maps.LatLng(52.376078, 4.894151)
+			};
+			var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+			console.log(map);
+		}
+	</script>
 </body>
 </html>
