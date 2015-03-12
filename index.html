@@ -18,7 +18,7 @@
 				center: new google.maps.LatLng(52.376078, 4.894151)
 			};
 			var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-			console.log(map);
+			map.data.loadGeoJson('amsterdamRegion.geojson');
 		}
 	</script>
 </body>
