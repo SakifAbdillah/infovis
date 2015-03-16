@@ -11,7 +11,9 @@
 	<div id="map-canvas"></div>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANln09l2wflbNzL5kXlOkb4cuURGYMlvs"></script>
-	<script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+	<script type="text/javascript">
+		
 		window.onload = function(){
 			var MY_MAPTYPE_ID = 'styled';
 
@@ -83,7 +85,43 @@
 			});
 			map.data.addListener("mouseover", function(event){
 				console.log(event.feature.k.bcnaam);
-			})
+			});
+			var areasArray = [];
+			$(function(){
+			$.getJSON('areadata.json',function(data) {
+                console.log('success');
+                $.each(data.areas, function (i, area) {
+                    areasArray[areasArray.length] = [area.areaCode, area.security];
+                });
+                        map.data.setStyle(function(feature) {
+    				        var thisAreaCode = feature.getProperty('sdbc');
+					        var security;
+					        for(var i = 0; i<areasArray.length; i++){
+
+						        if(areasArray[i][0] == thisAreaCode){
+							        security = parseInt(areasArray[i][1]);
+                                    console.log(i + " " + security);
+                                    break;
+                                }
+					        }
+					        var color;
+					        switch(security){
+						        case 1: color = "white"; break;
+						        case 2: color = "green"; break;
+						        case 3: color = "yellow"; break;
+						        case 4: color = "red"; break;
+						        case 5: color = "black"; break;
+					        }
+                        alert(color);
+    					return {
+      						fillColor: color
+    				};
+});
+        		}).error(function(){
+            			console.log('error');
+        		});
+			
+    			});
 		}
 	</script>
 </body>
