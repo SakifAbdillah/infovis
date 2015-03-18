@@ -5,13 +5,38 @@
 	<style>
 	*{margin: 0px; padding: 0px}
 	#map-canvas{width: 100%; height: 100%; display: block;}
+	.panel{
+		width: 300px;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		z-index: 9999;
+		background-color: #fff;
+		padding: 20px;
+	}
 	</style>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">
 </head>
 <body>
+	<div class="panel">
+			<h6>Heatmap Selector</h6>
+			<p>
+				<input type="radio" value="security" class="selection" name="selection" id="radio1" checked/>
+				<label for="radio1">Security</label>
+			</p>
+			<p>
+				<input type="radio" value="emptyOffice" class="selection" name="selection" id="radio2"/>
+				<label for="radio2">Empty Offices</label>
+			</p>
+		</div>
+	</div>
 	<div id="map-canvas"></div>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANln09l2wflbNzL5kXlOkb4cuURGYMlvs"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
 	<script type="text/javascript">
 		
 		window.onload = function(){
@@ -80,48 +105,102 @@
 
 			map.data.loadGeoJson('amsterdamRegion.geojson');
 			map.data.setStyle({
-				strokeWeight : 1,
-				fillOpacity: 0.2
+				strokeWeight : 0.5,
+				fillOpacity: 1
 			});
 			map.data.addListener("mouseover", function(event){
 				console.log(event.feature.k.bcnaam);
 			});
 			var areasArray = [];
 			$(function(){
-			$.getJSON('areadata.json',function(data) {
-                console.log('success');
-                $.each(data.areas, function (i, area) {
-                    areasArray[areasArray.length] = [area.areaCode, area.security];
-                });
-                        map.data.setStyle(function(feature) {
-    				        var thisAreaCode = feature.getProperty('sdbc');
-					        var security;
-					        for(var i = 0; i<areasArray.length; i++){
+				$.getJSON('areadata.json',function(data) {
+	                //console.log('success');
+	                var min = 0, max = 0;
+	                $.each(data.areas, function (i, area) {
+	                    areasArray[areasArray.length] = [area.areaCode, area.security, area.emptySpace];
+	                	if(area.emptySpace < min)
+	                		min = area.emptySpace;
+	                	else if(area.emptySpace > max)
+	                		max = area.emptySpace;
+	                });
 
-						        if(areasArray[i][0] == thisAreaCode){
-							        security = parseInt(areasArray[i][1]);
-                                    console.log(i + " " + security);
-                                    break;
-                                }
-					        }
-					        var color;
-					        switch(security){
-						        case 1: color = "green"; break;
-						        case 2: color = "yellow"; break;
-						        case 3: color = "orange"; break;
-						        case 4: color = "red"; break;
-						        case 5: color = "black"; break;
-					        }
-                   
-    					return {
-      						fillColor: color
-    				};
-});
-        		}).error(function(){
-            			console.log('error');
-        		});
-			
-    			});
+	                var emptyOfficeScale = d3.scale.linear().domain([min, max]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
+
+	                map.data.setStyle(function(feature) {
+						var thisAreaCode = feature.getProperty('sdbc');
+						var security;
+						for(var i = 0; i<areasArray.length; i++){
+
+						    if(areasArray[i][0] == thisAreaCode){
+						        security = parseInt(areasArray[i][1]);
+						        console.log(i + " " + security);
+						        break;
+						    }
+						}
+						var color;
+						switch(security){
+						    case 1: color = "green"; break;
+						    case 2: color = "yellow"; break;
+						    case 3: color = "orange"; break;
+						    case 4: color = "red"; break;
+						    case 5: color = "black"; break;
+						}
+
+						return {
+							fillColor: color
+						};
+					});
+
+					$('.selection').change(function(e){
+						if($(this).val() == "security") {
+							map.data.setStyle(function(feature) {
+								var thisAreaCode = feature.getProperty('sdbc');
+								var security;
+								for(var i = 0; i<areasArray.length; i++){
+
+								    if(areasArray[i][0] == thisAreaCode){
+								        security = parseInt(areasArray[i][1]);
+								        console.log(i + " " + security);
+								        break;
+								    }
+								}
+								var color;
+								switch(security){
+								    case 1: color = "green"; break;
+								    case 2: color = "yellow"; break;
+								    case 3: color = "orange"; break;
+								    case 4: color = "red"; break;
+								    case 5: color = "black"; break;
+								}
+
+								return {
+									fillColor: color
+								};
+							});
+						} else {
+							map.data.setStyle(function(feature) {
+							        var thisAreaCode = feature.getProperty('sdbc');
+							        var emptyOffice;
+							        for(var i = 0; i<areasArray.length; i++){
+
+								        if(areasArray[i][0] == thisAreaCode){
+									        emptyOffice = parseInt(areasArray[i][2]);
+			                                console.log(i + " " + emptyOffice);
+			                                break;
+			                            }
+							        }
+							        var color = emptyOfficeScale(emptyOffice);
+								return {
+			  						fillColor: color,
+									fillOpacity: 0.7
+			    				};
+							});
+						}
+					})
+	    		}).error(function(){
+	        			console.log('error');
+	    		});	
+    		});
 		}
 	</script>
 </body>
