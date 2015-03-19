@@ -23,12 +23,16 @@
 			<h6>Heatmap Selector</h6>
 			<p>
 				<input type="radio" value="security" class="selection" name="selection" id="radio1" checked/>
-				<label for="radio1">Security</label>
+				<label for="radio1">Safety</label>
 			</p>
 			<p>
 				<input type="radio" value="emptyOffice" class="selection" name="selection" id="radio2"/>
 				<label for="radio2">Empty Offices</label>
 			</p>
+        <p>
+            <input type="radio" value="economicActivity" class="selection" name="selection" id="radio3"/>
+            <label for="radio3">Economic Activity</label>
+        </p>
 		</div>
 	</div>
 	<div id="map-canvas"></div>
@@ -40,59 +44,58 @@
 	<script type="text/javascript">
 		
 		window.onload = function(){
-			var MY_MAPTYPE_ID = 'styled';
-
-			var featureOpts = [
-				{
-					"featureType": "administrative",
-					"stylers": [
-					{ "visibility": "off" }
-					]
-				},{
-					"featureType": "landscape.natural",
-					"stylers": [
-					{ "visibility": "off" }
-					]
-				},{
-					"featureType": "road",
-					"elementType": "geometry",
-					"stylers": [
-					{ "color": "#c2c5c2" }
-					]
-				},{
-					"featureType": "poi",
-					"stylers": [
-					{ "visibility": "off" }
-					]
-				},{
-					"featureType": "transit",
-					"stylers": [
-					{ "visibility": "off" }
-					]
-				},{
-					"featureType": "road",
-					"elementType": "labels",
-					"stylers": [
-					{ "visibility": "off" }
-					]
-				},{
-					"featureType": "water",
-					"elementType": "labels",
-					"stylers": [
-					{ "visibility": "off" }
-					]
-				},{
-					"featureType": "water",
-					"stylers": [
-					{ "color": "#a7a7a7" }
-					]
-				}
-			];
-			var mapOptions = {
-				zoom: 12,
-				center: new google.maps.LatLng(52.376078, 4.894151),
-				mapTypeId: MY_MAPTYPE_ID
-			};
+            var MY_MAPTYPE_ID = 'styled';
+            var featureOpts = [
+                {
+                    "featureType": "administrative",
+                    "stylers": [
+                        { "visibility": "off" }
+                    ]
+                },{
+                    "featureType": "landscape.natural",
+                    "stylers": [
+                        { "visibility": "off" }
+                    ]
+                },{
+                    "featureType": "road",
+                    "elementType": "geometry",
+                    "stylers": [
+                        { "color": "#c2c5c2" }
+                    ]
+                },{
+                    "featureType": "poi",
+                    "stylers": [
+                        { "visibility": "off" }
+                    ]
+                },{
+                    "featureType": "transit",
+                    "stylers": [
+                        { "visibility": "off" }
+                    ]
+                },{
+                    "featureType": "road",
+                    "elementType": "labels",
+                    "stylers": [
+                        { "visibility": "off" }
+                    ]
+                },{
+                    "featureType": "water",
+                    "elementType": "labels",
+                    "stylers": [
+                        { "visibility": "off" }
+                    ]
+                },{
+                    "featureType": "water",
+                    "stylers": [
+                        { "color": "#a7a7a7" }
+                    ]
+                }
+            ];
+            var mapOptions = {
+                zoom: 12,
+                center: new google.maps.LatLng(52.376078, 4.894151),
+                mapTypeId: MY_MAPTYPE_ID
+            };
 			var styledMapOptions = {
 				name: 'Custom Style'
 			};
@@ -116,13 +119,25 @@
 				$.getJSON('areadata.json',function(data) {
 					console.log(data);
 	                //console.log('success');
-	                var min = 0, max = 0;
+	                var minEmptySpace = 0, maxEmptySpace = 0;
+                    var minSecurity = 0, maxSecurity = 0;
+                    var minEconomicActivity = 0, maxEconomicActivity = 0;
 	                $.each(data.areas, function (i, area) {
-	                    areasArray[areasArray.length] = [area.areaCode, area.security, area.emptySpace];
-	                	if(area.emptySpace < min)
-	                		min = area.emptySpace;
-	                	else if(area.emptySpace > max)
-	                		max = area.emptySpace;
+	                    areasArray[areasArray.length] = [area.areaCode, area.security, area.emptySpace, area.economicActivity];
+	                	if(area.emptySpace < minEmptySpace)
+	                		minEmptySpace = area.emptySpace;
+	                	else if(area.emptySpace > maxEmptySpace)
+	                		maxEmptySpace = area.emptySpace;
+                        if(area.security < minSecurity)
+                            minSecurity = area.security;
+                        else if(area.security > maxSecurity)
+                            maxSecurity = area.security;
+                        if(area.economicActivity < minEconomicActivity){
+                            minEconomicActivity = area.economicActivity;
+                            console.log(area.economicActivity);}
+                        else if(area.economicActivity > maxEconomicActivity)
+                            maxEconomicActivity = area.economicActivity;
+
 	                	var image = {
 							url: 'assets/tower.png',
 							// This marker is 20 pixels wide by 32 pixels tall.
@@ -141,91 +156,78 @@
 							});
 	                	}
 	                });
-	                
-	                var emptyOfficeScale = d3.scale.linear().domain([min, max]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
-	                
+
+                    var economicActivityScale = d3.scale.linear().domain([minEconomicActivity, maxEconomicActivity]).range(["white", "green","yellow", "orange", "red","black"]);
+	                var securityScale = d3.scale.linear().domain([minSecurity, maxSecurity]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
+                    var emptySpaceScale = d3.scale.linear().domain([minEmptySpace, maxEmptySpace]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
+
+                    var scales = [economicActivityScale, securityScale, emptySpaceScale];
+
 	                $.each(data.areas, function (i, area) {
 	                	console.log(area);
-	                    
+
 	                });
 
 
-	                map.data.setStyle(function(feature) {
-						var thisAreaCode = feature.getProperty('sdbc');
-						var security;
-						for(var i = 0; i<areasArray.length; i++){
-
-						    if(areasArray[i][0] == thisAreaCode){
-						        security = parseInt(areasArray[i][1]);
-						        //console.log(i + " " + security);
-						        break;
-						    }
-						}
-						var color;
-						switch(security){
-						    case 1: color = "green"; break;
-						    case 2: color = "yellow"; break;
-						    case 3: color = "orange"; break;
-						    case 4: color = "red"; break;
-						    case 5: color = "black"; break;
-						}
-
-						return {
-							fillColor: color
-						};
-					});
+                    map.data.setStyle(function(feature) {
+                        var parameter=1;
+                        var thisAreaCode = feature.getProperty('sdbc');
+                        var parameterValue;
+                        for(var i = 0; i<areasArray.length; i++){
+                            if(areasArray[i][0] == thisAreaCode){
+                                parameterValue = parseInt(areasArray[i][parameter]);
+                                console.log(i + " " + parameterValue);
+                                break;
+                            }
+                        }
+                        var scale = scales[parameter-1];
+                        var color = scale(parameterValue);
+                        return {
+                            fillColor: color,
+                            fillOpacity: 0.7
+                        };
+                        return {
+                            fillColor: color
+                        };
+                    });
 
 					$('.selection').change(function(e){
+                        var parameter = 1;
 						if($(this).val() == "security") {
-							map.data.setStyle(function(feature) {
-								var thisAreaCode = feature.getProperty('sdbc');
-								var security;
-								for(var i = 0; i<areasArray.length; i++){
+                            parameter = 1;
+                        }else if($(this).val() == "economicActivity"){
+                            parameter = 3;
+                        }else{
+                            parameter=2;
+                        }
 
+                        map.data.setStyle(function(feature) {
+							var thisAreaCode = feature.getProperty('sdbc');
+							var parameterValue;
+								for(var i = 0; i<areasArray.length; i++){
 								    if(areasArray[i][0] == thisAreaCode){
-								        security = parseInt(areasArray[i][1]);
-								        console.log(i + " " + security);
+								        parameterValue = parseInt(areasArray[i][parameter]);
+								        console.log(i + " " + parameterValue);
 								        break;
 								    }
 								}
-								var color;
-								switch(security){
-								    case 1: color = "green"; break;
-								    case 2: color = "yellow"; break;
-								    case 3: color = "orange"; break;
-								    case 4: color = "red"; break;
-								    case 5: color = "black"; break;
-								}
-
+                            var scale = scales[parameter-1];
+                            var color = scale(parameterValue);
+                            return {
+                                fillColor: color,
+                                fillOpacity: 0.7
+                            };
 								return {
 									fillColor: color
 								};
 							});
-						} else {
-							map.data.setStyle(function(feature) {
-							        var thisAreaCode = feature.getProperty('sdbc');
-							        var emptyOffice;
-							        for(var i = 0; i<areasArray.length; i++){
-
-								        if(areasArray[i][0] == thisAreaCode){
-									        emptyOffice = parseInt(areasArray[i][2]);
-			                                console.log(i + " " + emptyOffice);
-			                                break;
-			                            }
-							        }
-							        var color = emptyOfficeScale(emptyOffice);
-								return {
-			  						fillColor: color,
-									fillOpacity: 0.7
-			    				};
-							});
-						}
 					})
 	    		}).error(function(){
 	        			console.log('error');
 	    		});	
     		});
 		}
+
 	</script>
 </body>
 </html>
