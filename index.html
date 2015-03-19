@@ -114,6 +114,7 @@
 			var areasArray = [];
 			$(function(){
 				$.getJSON('areadata.json',function(data) {
+					console.log(data);
 	                //console.log('success');
 	                var min = 0, max = 0;
 	                $.each(data.areas, function (i, area) {
@@ -122,9 +123,32 @@
 	                		min = area.emptySpace;
 	                	else if(area.emptySpace > max)
 	                		max = area.emptySpace;
+	                	var image = {
+							url: 'assets/tower.png',
+							// This marker is 20 pixels wide by 32 pixels tall.
+							size: new google.maps.Size(10, 40),
+							// The origin for this image is 0,0.
+							origin: new google.maps.Point(0,0),
+							// The anchor for this image is the base of the flagpole at 0,32.
+							anchor: new google.maps.Point(0, 40)
+						};
+	                	if(area.hasOwnProperty('centerLatLng')){
+		                	var marker = new google.maps.Marker({
+								position: new google.maps.LatLng(area.centerLatLng.x, area.centerLatLng.y),
+								icon: image,
+								map: map,
+								title:"Hello World!"
+							});
+	                	}
+	                });
+	                
+	                var emptyOfficeScale = d3.scale.linear().domain([min, max]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
+	                
+	                $.each(data.areas, function (i, area) {
+	                	console.log(area);
+	                    
 	                });
 
-	                var emptyOfficeScale = d3.scale.linear().domain([min, max]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
 
 	                map.data.setStyle(function(feature) {
 						var thisAreaCode = feature.getProperty('sdbc');
@@ -133,7 +157,7 @@
 
 						    if(areasArray[i][0] == thisAreaCode){
 						        security = parseInt(areasArray[i][1]);
-						        console.log(i + " " + security);
+						        //console.log(i + " " + security);
 						        break;
 						    }
 						}
