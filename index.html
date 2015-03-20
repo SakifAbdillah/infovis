@@ -109,7 +109,7 @@
 				fillOpacity: 1
 			});
 			map.data.addListener("mouseover", function(event){
-				console.log(event.feature.k.bcnaam);
+				console.log(event.feature.k.sdbc);
 			});
 			var areasArray = [];
 			$(function(){
@@ -123,29 +123,35 @@
 	                		min = area.emptySpace;
 	                	else if(area.emptySpace > max)
 	                		max = area.emptySpace;
-	                	var image = {
-							url: 'assets/tower.png',
-							// This marker is 20 pixels wide by 32 pixels tall.
-							size: new google.maps.Size(10, 40),
-							// The origin for this image is 0,0.
-							origin: new google.maps.Point(0,0),
-							// The anchor for this image is the base of the flagpole at 0,32.
-							anchor: new google.maps.Point(0, 40)
-						};
-	                	if(area.hasOwnProperty('centerLatLng')){
-		                	var marker = new google.maps.Marker({
-								position: new google.maps.LatLng(area.centerLatLng.x, area.centerLatLng.y),
-								icon: image,
-								map: map,
-								title:"Hello World!"
-							});
-	                	}
 	                });
 	                
 	                var emptyOfficeScale = d3.scale.linear().domain([min, max]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
-	                
+	                var emptyOfficeHeight = d3.scale.linear().domain([min, max]).range([0, 100]);
+
 	                $.each(data.areas, function (i, area) {
-	                	console.log(area);
+	                	//console.log(emptyOfficeHeight(area.emptySpace));
+	                	console.log(emptyOfficeHeight(area.emptySpace));
+	                	
+	                	if(area.emptySpace > 0) {
+	                		//console.log(height);
+		                	var image = {
+								url: 'assets/tower.png',
+								// This marker is 20 pixels wide by 32 pixels tall.
+								size: new google.maps.Size(10, emptyOfficeHeight(area.emptySpace)),
+								// The origin for this image is 0,0.
+								origin: new google.maps.Point(0,0),
+								// The anchor for this image is the base of the flagpole at 0,32.
+								anchor: new google.maps.Point(10, emptyOfficeHeight(area.emptySpace))
+							};
+		                	if(area.hasOwnProperty('centerLatLng')){
+			                	var marker = new google.maps.Marker({
+									position: new google.maps.LatLng(area.centerLatLng.x, area.centerLatLng.y),
+									icon: image,
+									map: map,
+									title:"Hello World!"
+								});
+		                	}
+		                }
 	                    
 	                });
 
