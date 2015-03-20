@@ -5,7 +5,7 @@
       "areaName": "Burgwallen - Oude Zijde",
       "emptySpace": "2",
       "security": "4",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3751505,
         "y": 4.898166
@@ -16,10 +16,10 @@
       "areaName": "Burgwallen - Nieuwe Zijde",
       "emptySpace": "2",
       "security": "5",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
-        "x": 52.371152, 
-        "y": 4.891676 
+        "x": 52.3751465,
+        "y": 4.8972005
       }
     },
     {
@@ -27,7 +27,7 @@
       "areaName": "Grachtengordel - West",
       "emptySpace": "3",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.374609,
         "y": 4.8885875
@@ -38,7 +38,7 @@
       "areaName": "Grachtengordel - Zuid",
       "emptySpace": "2",
       "security": "4",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.365545,
         "y": 4.8939665
@@ -49,7 +49,7 @@
       "areaName": "Nieuwmarkt/Lastage",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.376518,
         "y": 4.904904
@@ -60,7 +60,7 @@
       "areaName": "Haarlemmerbuurt",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3848405,
         "y": 4.89064
@@ -71,7 +71,7 @@
       "areaName": "Jordaan",
       "emptySpace": "0",
       "security": "4",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.376209,
         "y": 4.881785
@@ -82,7 +82,7 @@
       "areaName": "Weteringschans",
       "emptySpace": "2",
       "security": "5",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.362085, 
         "y": 4.891676
@@ -93,7 +93,7 @@
       "areaName": "Weesperbuurt/Plantage",
       "emptySpace": "1",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3652035,
         "y": 4.9121225
@@ -104,7 +104,7 @@
       "areaName": "Oostelijke Eilanden/Kadijken",
       "emptySpace": "2",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3713465,
         "y": 4.921812
@@ -115,7 +115,7 @@
       "areaName": "Westelijk Havengebied",
       "emptySpace": "6",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.4129365,
         "y": 4.8079725
@@ -126,7 +126,7 @@
       "areaName": "Bedrijventerrein Sloterdijk",
       "emptySpace": "19",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.391807,
         "y": 4.841765
@@ -137,7 +137,7 @@
       "areaName": "Houthavens",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3950345,
         "y": 4.881085
@@ -148,7 +148,7 @@
       "areaName": "Spaarndammer- en Zeeheldenbuurt",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.392727,
         "y": 4.8749315
@@ -159,7 +159,7 @@
       "areaName": "Staatsliedenbuurt",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.384106,
         "y": 4.8755705
@@ -170,7 +170,7 @@
       "areaName": "Centrale Markt",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.380057,
         "y": 4.866011
@@ -181,7 +181,7 @@
       "areaName": "Frederik Hendrikbuurt",
       "emptySpace": "1",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.378579, 
         "y": 4.876098
@@ -192,7 +192,7 @@
       "areaName": "Da Costabuurt",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.371136,
         "y": 4.8723925
@@ -203,7 +203,7 @@
       "areaName": "Kinkerbuurt",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.370326,
         "y": 4.865784
@@ -214,7 +214,7 @@
       "areaName": "Van Lennepbuurt",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3671155,
         "y": 4.867819
@@ -225,7 +225,7 @@
       "areaName": "Helmersbuurt",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.365809,
         "y": 4.871935
@@ -236,7 +236,7 @@
       "areaName": "Overtoomse Sluis",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.361146,
         "y": 4.860177
@@ -247,7 +247,7 @@
       "areaName": "Vondelbuurt",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.36333,
         "y": 4.873744
@@ -258,7 +258,7 @@
       "areaName": "Sloterdijk",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3880075,
         "y": 4.855323
@@ -269,7 +269,7 @@
       "areaName": "Landlust",
       "emptySpace": "1",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3813105,
         "y": 4.854726
@@ -280,7 +280,7 @@
       "areaName": "Erasmuspark",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.377423,
         "y": 4.8514995
@@ -291,7 +291,7 @@
       "areaName": "De Kolenkit",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3796385,
         "y": 4.841685
@@ -302,7 +302,7 @@
       "areaName": "De Krommert",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3728,
         "y": 4.8618315
@@ -313,7 +313,7 @@
       "areaName": "Van Galenbuurt",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3735025,
         "y": 4.8497055
@@ -324,7 +324,7 @@
       "areaName": "Hoofdweg e.o.",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3682505,
         "y": 4.8536425
@@ -335,7 +335,7 @@
       "areaName": "Westindische Buurt",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.362092,
         "y": 4.8544255
@@ -346,7 +346,7 @@
       "areaName": "Spieringhorn",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.387938,
         "y": 4.7952785
@@ -357,7 +357,7 @@
       "areaName": "Slotermeer-Noordoost",
       "emptySpace": "1",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3816915,
         "y": 4.829415
@@ -368,7 +368,7 @@
       "areaName": "Slotermeer-Zuidwest",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.373099,
         "y": 4.8212185
@@ -379,7 +379,7 @@
       "areaName": "Geuzenveld",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3795665,
         "y": 4.801718
@@ -390,7 +390,7 @@
       "areaName": "Eendracht",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3781455,
         "y": 4.77693
@@ -401,7 +401,7 @@
       "areaName": "Lutkemeer/Ookmeer",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3739845,
         "y": 4.781652
@@ -412,7 +412,7 @@
       "areaName": "Osdorp-Oost",
       "emptySpace": "1",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.359496,
         "y": 4.80818
@@ -423,7 +423,7 @@
       "areaName": "Osdorp-Midden",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3573295,
         "y": 4.7954885
@@ -434,7 +434,7 @@
       "areaName": "De Punt",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3585965,
         "y": 4.784583
@@ -445,7 +445,7 @@
       "areaName": "Middelveldsche Akerpolder/Sloten",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3469575,
         "y": 4.7852005
@@ -456,7 +456,7 @@
       "areaName": "Slotervaart",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3595765,
         "y": 4.823574
@@ -467,10 +467,10 @@
       "areaName": "Overtoomse Veld",
       "emptySpace": "1",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
-        "x": 52.364182, 
-        "y": 4.844984
+        "x": 52.366532,
+        "y": 4.84253
       }
     },
     {
@@ -478,7 +478,7 @@
       "areaName": "Westlandgracht",
       "emptySpace": "7",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3488035,
         "y": 4.8418295
@@ -489,7 +489,7 @@
       "areaName": "Sloter-/Riekerpolder",
       "emptySpace": "5",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.342635,
         "y": 4.8227935
@@ -500,7 +500,7 @@
       "areaName": "Oude Pijp",
       "emptySpace": "0",
       "security": "4",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.357571,
         "y": 4.8965785
@@ -511,14 +511,14 @@
       "areaName": "Nieuwe Pijp",
       "emptySpace": "",
       "security": "3",
-      "economicActivity": ""
+      "economicActivity": "2"
     },
     {
       "areaCode": "K26",
       "areaName": "Diamantbuurt",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3518285,
         "y": 4.903114
@@ -529,7 +529,7 @@
       "areaName": "Hoofddorppleinbuurt",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.34914,
         "y": 4.8485785
@@ -540,7 +540,7 @@
       "areaName": "Schinkelbuurt",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3508855,
         "y": 4.8531985
@@ -551,7 +551,7 @@
       "areaName": "Willemspark",
       "emptySpace": "1",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.35653,
         "y": 4.8630655
@@ -562,7 +562,7 @@
       "areaName": "Museumkwartier",
       "emptySpace": "1",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.356268,
         "y": 4.8768065
@@ -573,7 +573,7 @@
       "areaName": "Stadionbuurt",
       "emptySpace": "2",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.345952, 
         "y": 4.863223
@@ -584,7 +584,7 @@
       "areaName": "Apollobuurt",
       "emptySpace": "1",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3492925,
         "y": 4.8761375
@@ -595,7 +595,7 @@
       "areaName": "Duivelseiland",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3544365,
         "y": 4.884622
@@ -606,7 +606,7 @@
       "areaName": "Scheldebuurt",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3426,
         "y": 4.8959825
@@ -617,7 +617,7 @@
       "areaName": "IJselbuurt",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3491445,
         "y": 4.904299
@@ -628,7 +628,7 @@
       "areaName": "Rijnbuurt",
       "emptySpace": "1",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3422775,
         "y": 4.904264
@@ -639,7 +639,7 @@
       "areaName": "Station Zuid/WTC e.o.",
       "emptySpace": "1",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.34295,
         "y": 4.87192
@@ -650,7 +650,7 @@
       "areaName": "Buitenveldert-West",
       "emptySpace": "3",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.329012, 
         "y": 4.868759
@@ -661,7 +661,7 @@
       "areaName": "Buitenveldert-Oost",
       "emptySpace": "4",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.331265,
         "y": 4.88835
@@ -672,7 +672,7 @@
       "areaName": "Weesperzijde",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3560755,
         "y": 4.9109145
@@ -683,7 +683,7 @@
       "areaName": "Oosterparkbuurt",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.36006,
         "y": 4.917824
@@ -694,7 +694,7 @@
       "areaName": "Dapperbuurt",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3631485,
         "y": 4.930255
@@ -705,7 +705,7 @@
       "areaName": "Transvaalbuurt",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.35611,
         "y": 4.9217925
@@ -716,7 +716,7 @@
       "areaName": "Indische Buurt West",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3631875,
         "y": 4.936416
@@ -727,7 +727,7 @@
       "areaName": "Indische Buurt Oost",
       "emptySpace": "1",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.364089,
         "y": 4.9510265
@@ -738,21 +738,21 @@
       "areaName": "Oostelijk Havengebied",
       "emptySpace": "",
       "security": "3",
-      "economicActivity": ""
+      "economicActivity": "2"
     },
     {
       "areaCode": "M34 ",
       "areaName": "Zeeburgereiland/Nieuwe Diep",
       "emptySpace": "",
       "security": "1",
-      "economicActivity": ""
+      "economicActivity": "2"
     },
     {
       "areaCode": "M35",
       "areaName": "IJburg West",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.360685,
         "y": 4.9915465
@@ -763,7 +763,7 @@
       "areaName": "IJburg Zuid",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3525185,
         "y": 5.0090795
@@ -774,7 +774,7 @@
       "areaName": "Frankendael",
       "emptySpace": "4",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.348627,
         "y": 4.926613
@@ -785,7 +785,7 @@
       "areaName": "Middenmeer",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3506235,
         "y": 4.9493025
@@ -796,7 +796,7 @@
       "areaName": "Betondorp",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.342764,
         "y": 4.940366
@@ -807,7 +807,7 @@
       "areaName": "De Omval",
       "emptySpace": "4",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3345865,
         "y": 4.9194615
@@ -818,7 +818,7 @@
       "areaName": "Volewijck",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3930455,
         "y": 4.9109135
@@ -829,7 +829,7 @@
       "areaName": "IJplein/Vogelbuurt",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.390941,
         "y": 4.921058
@@ -840,7 +840,7 @@
       "areaName": "Tuindorp Nieuwendam",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.391665,
         "y": 4.944137
@@ -851,7 +851,7 @@
       "areaName": "Tuindorp Buiksloot",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.394718,
         "y": 4.9293515
@@ -862,7 +862,7 @@
       "areaName": "Nieuwendammerdijk/Buiksloterdijk",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3945535,
         "y": 4.933872
@@ -873,7 +873,7 @@
       "areaName": "Tuindorp Oostzaan",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.4113825,
         "y": 4.8913645
@@ -884,7 +884,7 @@
       "areaName": "Oostzanerwerf",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.423695,
         "y": 4.878221
@@ -895,7 +895,7 @@
       "areaName": "Kadoelen",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.4208755,
         "y": 4.9090635
@@ -906,7 +906,7 @@
       "areaName": "Nieuwendam-Noord",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3964775,
         "y": 4.956275
@@ -917,7 +917,7 @@
       "areaName": "Buikslotermeer",
       "emptySpace": "0",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.4044115,
         "y": 4.9411025
@@ -928,7 +928,7 @@
       "areaName": "Banne Buiksloot",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.4088595,
         "y": 4.9167485
@@ -939,7 +939,7 @@
       "areaName": "Buiksloterham",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.401413,
         "y": 4.8892195
@@ -950,7 +950,7 @@
       "areaName": "Nieuwendammerham",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3860605,
         "y": 4.935937
@@ -961,7 +961,7 @@
       "areaName": "Waterland",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.398448,
         "y": 5.0112865
@@ -972,10 +972,10 @@
       "areaName": "Amstel III/Bullewijk",
       "emptySpace": "34",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
-        "x": 52.299786, 
-        "y": 4.946779
+        "x": 52.299765,
+        "y": 4.9509475
       }
     },
     {
@@ -983,7 +983,7 @@
       "areaName": "Bijlmer Centrum (D,F,H)",
       "emptySpace": "7",
       "security": "",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3163235,
         "y": 4.954889
@@ -994,7 +994,7 @@
       "areaName": "",
       "emptySpace": "1",
       "security": "",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.3205875,
         "y": 4.9771845
@@ -1005,7 +1005,7 @@
       "areaName": "Nellestein",
       "emptySpace": "0",
       "security": "1",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.310582,
         "y": 4.993157
@@ -1016,7 +1016,7 @@
       "areaName": "Holendrecht/Reigersbos",
       "emptySpace": "1",
       "security": "3",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.297178,
         "y": 4.9698325
@@ -1027,7 +1027,7 @@
       "areaName": "Gein",
       "emptySpace": "0",
       "security": "2",
-      "economicActivity": "",
+      "economicActivity": "2",
       "centerLatLng": {
         "x": 52.296496,
         "y": 4.9943
@@ -1038,7 +1038,7 @@
       "areaName": "Driemond",
       "emptySpace": "",
       "security": "1",
-      "economicActivity": ""
+      "economicActivity": "2"
     }
   ]
 }
