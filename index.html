@@ -3,7 +3,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
-	*{margin: 0px; padding: 0px}
+	*{margin: 0; padding: 0}
 	#map-canvas{width: 100%; height: 100%; display: block;}
 	.panel{
 		width: 300px;
@@ -26,24 +26,42 @@
 				<label for="radio1">Safety</label>
 			</p>
 			<p>
-				<input type="radio" value="emptyOffice" class="selection" name="selection" id="radio2"/>
+				<input type="radio" value="emptySpace" class="selection" name="selection" id="radio2"/>
 				<label for="radio2">Empty Offices</label>
 			</p>
         <p>
             <input type="radio" value="economicActivity" class="selection" name="selection" id="radio3"/>
             <label for="radio3">Economic Activity</label>
         </p>
-		</div>
-	</div>
-	<div id="map-canvas"></div>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANln09l2wflbNzL5kXlOkb4cuURGYMlvs"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-	<!-- Compiled and minified JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
-	<script type="text/javascript">
-		
+	<!--	</div>
+    <div class="panel">-->
+        <h6>Step</h6>
+        <p>
+            <input type="radio" value="why" class="selection" name="selectionTime" id="step1" checked/>
+            <label for="step1">Why convert offices?</label>
+        </p>
+        <p>
+            <input type="radio" value="how" class="selection" name="selectionTime" id="step2"/>
+            <label for="step2">How convert offices?</label>
+        </p>
+        <p>
+            <input type="radio" value="what" class="selection" name="selectionTime" id="step3"/>
+            <label for="step3">What does the future look like?</label>
+        </p>
+    </div>
+    <div id="map-canvas"></div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANln09l2wflbNzL5kXlOkb4cuURGYMlvs"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        var scales;
+        var areasArray = [];
+        var map;
+
 		window.onload = function(){
+            console.log("window loaded");
             var MY_MAPTYPE_ID = 'styled';
             var featureOpts = [
                 {
@@ -101,8 +119,8 @@
 			};
 
 			var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
-			
-			var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+
+			map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 
 			map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 
@@ -112,35 +130,47 @@
 				fillOpacity: 1
 			});
 			map.data.addListener("mouseover", function(event){
-				console.log(event.feature.k.sdbc);
+				//console.log(event.feature.k.sdbc);
 			});
-			var areasArray = [];
+
 			$(function(){
 				$.getJSON('areadata.json',function(data) {
-					console.log(data);
 	                //console.log('success');
 	                var minEmptySpace = 0, maxEmptySpace = 0;
+                    var minEmptySpaceFuture = 0, maxEmptySpaceFuture = 0;
                     var minSecurity = 0, maxSecurity = 0;
+                    var minSafetyFuture = 0, maxSafetyFuture = 0;
                     var minEconomicActivity = 0, maxEconomicActivity = 0;
+                    var minEconomicActivityFuture = 0, maxEconomicActivityFuture = 0;
 	                $.each(data.areas, function (i, area) {
 
-	                    areasArray[areasArray.length] = [area.areaCode, area.security, area.emptySpace, area.economicActivity];
-
+	                    areasArray[areasArray.length] = [[area.areaCode], [area.security, area.emptySpace,area.economicActivity],[area.safetyFuture, area.emptySpaceFuture, area.economicActivityFuture]];
 	                    var emptyOfficeHeight = d3.scale.linear().domain([minEmptySpace, maxEmptySpace]).range([0, 100]);
 
 	                	if(area.emptySpace < minEmptySpace)
 	                		minEmptySpace = area.emptySpace;
 	                	else if(area.emptySpace > maxEmptySpace)
 	                		maxEmptySpace = area.emptySpace;
+                        if(area.emptySpaceFuture < minEmptySpaceFuture)
+                            minEmptySpaceFuture = area.emptySpaceFuture;
+                        else if(area.emptySpaceFuture > maxEmptySpaceFuture)
+                            maxEmptySpaceFuture = area.emptySpaceFuture;
                         if(area.security < minSecurity)
                             minSecurity = area.security;
                         else if(area.security > maxSecurity)
                             maxSecurity = area.security;
-                        if(area.economicActivity < minEconomicActivity){
+                        if(area.safetyFuture < minSafetyFuture)
+                            minSafetyFuture = area.safetyFuture;
+                        else if(area.safetyFuture > maxSafetyFuture)
+                            maxSecurity = area.security;
+                        if(area.economicActivity < minEconomicActivity)
                             minEconomicActivity = area.economicActivity;
-                            console.log(area.economicActivity);}
                         else if(area.economicActivity > maxEconomicActivity)
                             maxEconomicActivity = area.economicActivity;
+                        if(area.economicActivityFuture < minEconomicActivityFuture)
+                            minEconomicActivityFuture = area.economicActivityFuture;
+                        else if(area.economicActivityFuture > maxEconomicActivityFuture)
+                            maxEconomicActivityFuture = area.economicActivityFuture;
 
 	                	var image = {
 							url: 'assets/tower.png',
@@ -162,75 +192,71 @@
 	                });
 
                     var economicActivityScale = d3.scale.linear().domain([minEconomicActivity, maxEconomicActivity]).range(["white", "green","yellow", "orange", "red","black"]);
-	                var securityScale = d3.scale.linear().domain([minSecurity, maxSecurity]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
+                    var economicActivityScaleFuture = d3.scale.linear().domain([minEconomicActivityFuture, maxEconomicActivityFuture]).range(["white", "green","yellow", "orange", "red","black"]);
+                    var securityScale = d3.scale.linear().domain([minSecurity, maxSecurity]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
+                    var securityScaleFuture = d3.scale.linear().domain([minSafetyFuture, maxSafetyFuture]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
                     var emptySpaceScale = d3.scale.linear().domain([minEmptySpace, maxEmptySpace]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
+                    var emptySpaceScaleFuture = d3.scale.linear().domain([minEmptySpaceFuture, maxEmptySpaceFuture]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
 
-                    var scales = [economicActivityScale, securityScale, emptySpaceScale];
+                    scales = [[securityScale, emptySpaceScale, economicActivityScale], [securityScaleFuture, maxEmptySpaceFuture, economicActivityScaleFuture]];
 
 	                $.each(data.areas, function (i, area) {
-	                	console.log(area);
+	                	//console.log(area);
 
 	                });
+                    loadMap(1,1);
 
-
-                    map.data.setStyle(function(feature) {
-                        var parameter=1;
-                        var thisAreaCode = feature.getProperty('sdbc');
-                        var parameterValue;
-                        for(var i = 0; i<areasArray.length; i++){
-                            if(areasArray[i][0] == thisAreaCode){
-                                parameterValue = parseInt(areasArray[i][parameter]);
-                                console.log(i + " " + parameterValue);
-                                break;
-                            }
-                        }
-                        var scale = scales[parameter-1];
-                        var color = scale(parameterValue);
-                        return {
-                            fillColor: color,
-                            fillOpacity: 0.7
-                        };
-                        return {
-                            fillColor: color
-                        };
-                    });
-
+                    var heatmap = 1;
+                    var time = 1;
 					$('.selection').change(function(e){
-                        var parameter = 1;
-						if($(this).val() == "security") {
-                            parameter = 1;
-                        }else if($(this).val() == "economicActivity"){
-                            parameter = 3;
-                        }else{
-                            parameter=2;
+                        switch ($(this).val()) {
+                            case "security":
+                                heatmap = 1;
+                                break;
+                            case "economicActivity":
+                                heatmap = 3;
+                                break;
+                            case "emptySpace":
+                                heatmap = 2;
+                                break;
+                            case "why" :
+                                time = 1;
+                                break;
+                            case "how" :
+                                time = 3;
+                                break;
+                            case "what":
+                                time = 2;
+                                break;
                         }
-
-                        map.data.setStyle(function(feature) {
-							var thisAreaCode = feature.getProperty('sdbc');
-							var parameterValue;
-								for(var i = 0; i<areasArray.length; i++){
-								    if(areasArray[i][0] == thisAreaCode){
-								        parameterValue = parseInt(areasArray[i][parameter]);
-								        console.log(i + " " + parameterValue);
-								        break;
-								    }
-								}
-                            var scale = scales[parameter-1];
-                            var color = scale(parameterValue);
-                            return {
-                                fillColor: color,
-                                fillOpacity: 0.7
-                            };
-								return {
-									fillColor: color
-								};
-							});
+                        loadMap(heatmap, time);
 					})
 	    		}).error(function(){
 	        			console.log('error');
-	    		});	
+	    		});
     		});
 		}
+
+        function loadMap(heatmap, time){
+            console.log("Load Heatmap " + heatmap + ", " + time);
+            if(time===3){return;}
+            map.data.setStyle(function(feature) {
+                var thisAreaCode = feature.getProperty('sdbc');
+                var parameterValue;
+                for(var i = 0; i<areasArray.length; i++){
+                    if(areasArray[i][0][0] === thisAreaCode){
+                            parameterValue = parseInt(areasArray[i][time][heatmap-1]);
+                        break;
+                    }
+                }
+                var scale = scales[time-1][heatmap-1];
+                var color = scale(parameterValue);
+                return {
+                    fillColor: color,
+                    fillOpacity: 0.7
+                };
+            })
+        }
 
 	</script>
 </body>
