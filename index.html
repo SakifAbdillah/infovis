@@ -20,19 +20,6 @@
 </head>
 <body>
 	<div class="panel">
-			<h6>Heatmap Selector</h6>
-			<p>
-				<input type="radio" value="security" class="selection" name="selection" id="radio1" checked/>
-				<label for="radio1">Safety</label>
-			</p>
-			<p>
-				<input type="radio" value="emptySpace" class="selection" name="selection" id="radio2"/>
-				<label for="radio2">Empty Offices</label>
-			</p>
-        <p>
-            <input type="radio" value="economicActivity" class="selection" name="selection" id="radio3"/>
-            <label for="radio3">Economic Activity</label>
-        </p>
 	<!--	</div>
     <div class="panel">-->
         <h6>Step</h6>
@@ -47,6 +34,19 @@
         <p>
             <input type="radio" value="what" class="selection" name="selectionTime" id="step3"/>
             <label for="step3">What does the future look like?</label>
+        </p>
+        <h6>Heatmap Selector</h6>
+        <p>
+            <input type="radio" value="security" class="selection" name="selection" id="radio1" checked/>
+            <label for="radio1">Safety</label>
+        </p>
+        <p>
+            <input type="radio" value="emptySpace" class="selection" name="selection" id="radio2"/>
+            <label for="radio2">Empty Offices</label>
+        </p>
+        <p>
+            <input type="radio" value="economicActivity" class="selection" name="selection" id="radio3"/>
+            <label for="radio3">Economic Activity</label>
         </p>
     </div>
     <div id="map-canvas"></div>
@@ -239,7 +239,8 @@
 
         function loadMap(heatmap, time){
             console.log("Load Heatmap " + heatmap + ", " + time);
-            if(time===3){return;}
+            if(time===3){ displayVisualizations();
+                return;}
             map.data.setStyle(function(feature) {
                 var thisAreaCode = feature.getProperty('sdbc');
                 var parameterValue;
@@ -256,6 +257,11 @@
                     fillOpacity: 0.7
                 };
             })
+        }
+
+        function displayVisualizations(){
+            console.log("display other visualizations");
+            location.href = "/infovis/how.html";
         }
 
 	</script>

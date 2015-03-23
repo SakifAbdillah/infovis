@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>How can offices be converted?</title>
+    <style>
+        *{margin: 0; padding: 0}
+        .panel{
+            width: 300px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 9999;
+            background-color: #fff;
+            padding: 20px;
+        }
+        path{
+            stroke: steelblue;
+            stroke-width:2;
+            fill:none
+        }
+        .axis path,
+        .axis line{
+            fill:none;
+            stroke:grey;
+            stroke-width:1;
+            shape-rendering: crispEdges;
+        }
+    </style>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">
+</head>
+<body>
+<div class="panel">
+    <h6>Step</h6>
+    <p>
+        <input type="radio" value="why" class="selection" name="selectionTime" id="step1" checked/>
+        <label for="step1">Why convert offices?</label>
+    </p>
+    <p>
+        <input type="radio" value="how" checked="checked" class="selection" name="selectionTime" id="step2"/>
+        <label for="step2">How to convert offices?</label>
+    </p>
+    <p>
+        <input type="radio" value="what" class="selection" name="selectionTime" id="step3"/>
+        <label for="step3">What does the future look like?</label>
+    </p>
+</div>
+    <div id="conversionRatio">
+        <h6>How many percent of the offices can be converted?</h6>
+    </div>
+    <div>
+        <h6>How many offices can be converted in Amsterdam?</h6>
+        <svg id="numberOffices" width="400" height="300"></svg>
+    </div>
+    <div>
+        <h6>The ideal convertible office space will comply the following requirements:</h6>
+        <table>
+            <tr>
+                <td>Location Requirements</td>
+                <td>Building Requirements</td>
+            </tr>
+            <tr>
+                <td>It should be located in an attractive area.</td>
+                <td>Building or renovation shouldn't have happened recently.</td>
+            </tr>
+            <tr>
+                <td>The land property should be owned, not rented.</td>
+                <td>It should have a nice appearance and be properly maintained.</td>
+            </tr>
+            <tr>
+                <td>The vacancy should be less than one year.</td>
+                <td>It should have options for extensions.</td>
+            </tr>
+            <tr>
+                <td>There should not be too many surrounding vacant buildings.</td>
+                <td>It should have a proper technical structure.</td>
+            </tr>
+            <tr>
+                <td>Various facilities should be close by and of decent facilities.</td>
+                <td>The storey height should be sufficient.</td>
+            </tr>
+            <tr>
+                <td>It should be accessible by public transport.</td>
+                <td>The facade should be acceptible</td>
+            </tr>
+            <tr>
+                <td>It should be accessible by car and have closeby parking places.</td>
+                <td>An accessible and secure entrance should be realisable.</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Sufficient conduits should be realisable.</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>It should provide a healthy living environment.</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h6>Required Distances</h6>
+        <table>
+            <tr>
+                <td> <5 Km </td>
+                <td>Basic medical facilities (doctor, pharmacy).</td>
+            </tr>
+            <tr>
+                <td><2 Km </td>
+                <td> Train station.  Sport facilities (fitness, swimming pool, sports park). Educational facilities (nursery, school, university).</td>
+            </tr>
+            <tr>
+                <td><1 Km</td>
+                <td>Bus, metro or tram stop. Shop for daily errands.</td>
+            </tr>
+            <tr>
+                <td><500m</td>
+                <td>Meeting place (cafe, snackbar, etc.).</td>
+                </tr>
+            <tr>
+                <td><250m </td>
+                <td>Parking place.</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h6>Cost vs. Earnings</h6>
+        + 20€ - 30€ per m2<br>
+        Earnings when offices are converted to houses
+        + 15€ per m2 <br>
+        Savings for maintaining empty office spaces, energy, ensurances, and vacanvy management.
+        <svg id="profitConversion" height="300"></svg>
+    </div>
+    <div>
+        <h6>Projected companies</h6>
+        <svg id="workerForecast" height="300"></svg>
+        <svg id="companyForecast" height="300"></svg>
+    </div>
+    <div>
+        <h6>Security Improvement</h6>
+        15% <br>
+        Increase in violent crimes near vacant buildings. This raise can be prevented by turning the vacant office buildings in occupied homes.
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            console.log("Building conversion ratio pie chart.");
+            buildConversionRatio();
+            console.log("Building number of offices line chart.");
+            buildLineChart("numberOffices", "numberOffices.csv");
+            console.log("Building profit conversion line chart.");
+            buildLineChart("profitConversion", "profit.csv");
+            console.log("Building Workers Forecast.");
+            buildLineChart("workerForecast", "workers.csv");
+            console.log("Building Companies Forecast");
+            buildLineChart("companyForecast", "companies.csv");
+
+            function buildConversionRatio() {
+                var w = 200;
+                var h = 200;
+                var r = h / 2;
+                var color = d3.scale.category20c();
+
+                var data = [{"label": "Convertible", "value": 20}, {"label": "Non-convertible", "value": 80}];
+                var vis = d3.select('#conversionRatio').append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+                var pie = d3.layout.pie().value(function (d) {
+                    return d.value;
+                });
+
+                // declare an arc generator function
+                var arc = d3.svg.arc().outerRadius(r);
+
+                // select paths, use arc generator to draw
+                var arcs = vis.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice");
+                arcs.append("svg:path").attr("fill", function (d, i) {
+                    return color(i);
+                })
+                        .attr("d", function (d) {
+                            // log the result of the arc generator to show how cool it is :)
+                            console.log(arc(d));
+                            return arc(d);
+                        });
+
+                // add the text
+                arcs.append("svg:text").attr("transform", function (d) {
+                    d.innerRadius = 0;
+                    d.outerRadius = r;
+                    return "translate(" + arc.centroid(d) + ")";
+                }).attr("text-anchor", "middle").text(function (d, i) {
+                            return data[i].label;
+                        }
+                );
+            }
+
+            function buildLineChart(chartName, lineData) {
+                // Set the dimensions of the canvas / graph
+                var margin = {top: 30, right: 20, bottom: 30, left: 100},
+                        width = 300 - margin.left - margin.right,
+                        height = 300 - margin.top - margin.bottom;
+
+                // Set the ranges
+                var x = d3.scale.linear().range([0, width]);
+                var y = d3.scale.linear().range([height, 0]);
+
+                // Define the axes
+                var xAxis = d3.svg.axis().scale(x)
+                                .tickSize(5)
+                                .tickSubdivide(true),
+                        yAxis = d3.svg.axis()
+                                .scale(y)
+                                .tickSize(5)
+                                .orient('left')
+                                .tickSubdivide(true);
+
+                // Define the line
+                var costline = d3.svg.line()
+                        .x(function (d) {
+                            return x(d.x);
+                        })
+                        .y(function (d) {
+                            return y(d.y);
+                        })
+                //.interpolate('linear');
+
+
+                // Adds the svg canvas
+                var svg = d3.select("#" + chartName)
+                        .append("svg")
+                        .attr("width", width + margin.left + margin.right)
+                        .attr("height", height + margin.top + margin.bottom)
+                        .append("g")
+                        .attr("transform",
+                        "translate(" + margin.left + "," + margin.top + ")");
+
+                // Get the data
+                d3.csv(lineData, function (error, data) {
+
+                    // Scale the range of the data
+                    x.domain([d3.min(data, function (d) {
+                        return d.x;
+                    }), d3.max(data, function (d) {
+                        return d.x;
+                    })]);
+                    y.domain([d3.min(data, function (d) {
+                        return d.y;
+                    }), d3.max(data, function (d) {
+                        return d.y;
+                    })]);
+
+                    // Nest the entries by symbol
+                    var dataNest = d3.nest()
+                            .key(function (d) {
+                                return d.symbol;
+                            })
+                            .entries(data);
+
+                    // Loop through each symbol / key
+                    dataNest.forEach(function (d) {
+                        svg.append("path")
+                                .attr("class", "line")
+                                .attr("d", costline(d.values));
+                    });
+
+                    // Add the X Axis
+                    svg.append("g")
+                            .attr("class", "x axis")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(xAxis);
+
+                    // Add the Y Axis
+                    svg.append("g")
+                            .attr("class", "y axis")
+
+                            .call(yAxis);
+
+                });
+
+
+            }
+            $('.selection').change(function(e){
+                switch ($(this).val()) {
+                    case "why" :
+                        time = 1;
+                        location.href = "/infovis/index.html";
+                        break;
+                    case "how" :
+                        time = 3;
+                        break;
+                    case "what":
+                        time = 2;
+                        location.href = "/infovis/index.html";
+                        break;
+                }
+
+            })
+        }
+        </script>
+</body>
+</html>
