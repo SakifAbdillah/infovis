@@ -27,6 +27,7 @@
             stroke-width:1;
             shape-rendering: crispEdges;
         }
+
     </style>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">
@@ -48,14 +49,14 @@
     </p>
 </div>
     <div id="conversionRatio">
-        <h6>How many percent of the offices can be converted?</h6>
+        <h5>How many percent of the offices can be converted?</h5>
     </div>
     <div>
-        <h6>How many offices can be converted in Amsterdam?</h6>
+        <h5>How many offices can be converted in Amsterdam?</h5>
         <svg id="numberOffices" width="400" height="300"></svg>
     </div>
     <div>
-        <h6>The ideal convertible office space will comply the following requirements:</h6>
+        <h5>The ideal convertible office space will comply the following requirements:</h5>
         <table>
             <tr>
                 <td>Location Requirements</td>
@@ -100,7 +101,7 @@
         </table>
     </div>
     <div>
-        <h6>Required Distances</h6>
+        <h5>Required Distances</h5>
         <table>
             <tr>
                 <td> <5 Km </td>
@@ -125,20 +126,20 @@
         </table>
     </div>
     <div>
-        <h6>Cost vs. Earnings</h6>
+        <5>Cost vs. Earnings</h5>
         + 20€ - 30€ per m2<br>
         Earnings when offices are converted to houses
         + 15€ per m2 <br>
-        Savings for maintaining empty office spaces, energy, ensurances, and vacanvy management.
+        Savings for maintaining empty office spaces, energy, ensurances, and vacancy management.
         <svg id="profitConversion" height="300"></svg>
     </div>
     <div>
-        <h6>Projected companies</h6>
+        <h5>Projected companies</h5>
         <svg id="workerForecast" height="300"></svg>
         <svg id="companyForecast" height="300"></svg>
     </div>
     <div>
-        <h6>Security Improvement</h6>
+        <h5>Security Improvement</h5>
         15% <br>
         Increase in violent crimes near vacant buildings. This raise can be prevented by turning the vacant office buildings in occupied homes.
     </div>
@@ -151,13 +152,13 @@
             console.log("Building conversion ratio pie chart.");
             buildConversionRatio();
             console.log("Building number of offices line chart.");
-            buildLineChart("numberOffices", "numberOffices.csv");
+            buildLineChart("numberOffices", "numberOffices.csv", "m2 per flat", "number of flats");
             console.log("Building profit conversion line chart.");
-            buildLineChart("profitConversion", "profit.csv");
+            buildLineChart("profitConversion", "profit.csv", "months after conversion", "cost/profit");
             console.log("Building Workers Forecast.");
-            buildLineChart("workerForecast", "workers.csv");
+            buildLineChart("workerForecast", "workers.csv", "year", "number of workers");
             console.log("Building Companies Forecast");
-            buildLineChart("companyForecast", "companies.csv");
+            buildLineChart("companyForecast", "companies.csv", "year", "number of workers");
 
             function buildConversionRatio() {
                 var w = 200;
@@ -196,60 +197,61 @@
                 );
             }
 
-            function buildLineChart(chartName, lineData) {
-                // Set the dimensions of the canvas / graph
-                var margin = {top: 30, right: 20, bottom: 30, left: 100},
-                        width = 300 - margin.left - margin.right,
-                        height = 300 - margin.top - margin.bottom;
-
-                // Set the ranges
-                var x = d3.scale.linear().range([0, width]);
-                var y = d3.scale.linear().range([height, 0]);
-
-                // Define the axes
-                var xAxis = d3.svg.axis().scale(x)
-                                .tickSize(5)
-                                .tickSubdivide(true),
-                        yAxis = d3.svg.axis()
-                                .scale(y)
-                                .tickSize(5)
-                                .orient('left')
-                                .tickSubdivide(true);
-
-                // Define the line
-                var costline = d3.svg.line()
-                        .x(function (d) {
-                            return x(d.x);
-                        })
-                        .y(function (d) {
-                            return y(d.y);
-                        })
-                //.interpolate('linear');
-
-
-                // Adds the svg canvas
-                var svg = d3.select("#" + chartName)
-                        .append("svg")
-                        .attr("width", width + margin.left + margin.right)
-                        .attr("height", height + margin.top + margin.bottom)
-                        .append("g")
-                        .attr("transform",
-                        "translate(" + margin.left + "," + margin.top + ")");
-
+            function buildLineChart(chartName, lineData, xLabel, yLabel) {
                 // Get the data
                 d3.csv(lineData, function (error, data) {
+                    // Set the dimensions of the canvas / graph
+                    var margin = {top: 30, right: 20, bottom: 30, left: 100},
+                            width = 300 - margin.left - margin.right,
+                            height = 300 - margin.top - margin.bottom;
 
-                    // Scale the range of the data
-                    x.domain([d3.min(data, function (d) {
-                        return d.x;
-                    }), d3.max(data, function (d) {
-                        return d.x;
-                    })]);
-                    y.domain([d3.min(data, function (d) {
-                        return d.y;
-                    }), d3.max(data, function (d) {
-                        return d.y;
-                    })]);
+                    // Set the ranges
+                    var xScale = d3.scale.linear().range([0, width])
+                            .domain([d3.min(data, function (d) {
+                                return +d.x;
+                            }), d3.max(data, function (d) {
+                                return+ d.x;
+                            })]);
+                    console.log(d3.min(data, function (d) {
+                        return +d.y;
+                    }) + ", max: ", d3.max(data, function (d) {
+                        return +d.y;
+                    }));
+                    var yScale = d3.scale.linear().range([height, 0])
+                            .domain([d3.min(data, function (d) {
+                                return +d.y;
+                            }), d3.max(data, function (d) {
+                                return +d.y;
+                            })]);;
+
+                    // Define the axes
+                    var xAxis = d3.svg.axis().scale(xScale)
+                            .tickSize(10)
+                            .tickSubdivide(false);
+                    var yAxis = d3.svg.axis().scale(yScale)
+                            .tickSize(5)
+                            .orient('left')
+                            .tickSubdivide(true);
+
+                    // Define the line
+                    var costline = d3.svg.line()
+                            .x(function (d) {
+                                return xScale(d.x);
+                            })
+                            .y(function (d) {
+                                return yScale(d.y);
+                            })
+                    //.interpolate('linear');
+
+
+                    // Adds the svg canvas
+                    var svg = d3.select("#" + chartName)
+                            .append("svg")
+                            .attr("width", width + margin.left + margin.right)
+                            .attr("height", height + margin.top + margin.bottom)
+                            .append("g")
+                            .attr("transform",
+                            "translate(" + margin.left + "," + margin.top + ")");
 
                     // Nest the entries by symbol
                     var dataNest = d3.nest()
@@ -258,6 +260,7 @@
                             })
                             .entries(data);
 
+                    console.log(dataNest);
                     // Loop through each symbol / key
                     dataNest.forEach(function (d) {
                         svg.append("path")
@@ -270,11 +273,15 @@
                             .attr("class", "x axis")
                             .attr("transform", "translate(0," + height + ")")
                             .call(xAxis);
+                    svg.append("text")      // text label for the x axis
+                            //.attr("x", 265 )
+                            //.attr("y",  240 )
+                            .style("text-anchor", "middle")
+                            .text(xLabel);
 
                     // Add the Y Axis
                     svg.append("g")
                             .attr("class", "y axis")
-
                             .call(yAxis);
 
                 });
