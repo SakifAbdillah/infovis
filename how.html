@@ -212,11 +212,7 @@
                             }), d3.max(data, function (d) {
                                 return+ d.x;
                             })]);
-                    console.log(d3.min(data, function (d) {
-                        return +d.y;
-                    }) + ", max: ", d3.max(data, function (d) {
-                        return +d.y;
-                    }));
+
                     var yScale = d3.scale.linear().range([height, 0])
                             .domain([d3.min(data, function (d) {
                                 return +d.y;
@@ -292,14 +288,14 @@
                 switch ($(this).val()) {
                     case "why" :
                         time = 1;
-                        location.href = "/infovis/index.html";
+                        location.href = "/infovis/index.html?step=1";
                         break;
                     case "how" :
                         time = 3;
                         break;
                     case "what":
                         time = 2;
-                        location.href = "/infovis/index.html";
+                        location.href = "/infovis/index.html?step=2";
                         break;
                 }
 

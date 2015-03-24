@@ -204,7 +204,20 @@
 	                	//console.log(area);
 
 	                });
-                    loadMap(1,1);
+                    var query_string={};
+                    var query=window.location.search.substring(1);
+                    var parameter = query.split("=");
+                    console.log(parameter[1]);
+                    if(typeof parameter[1]=== "string"){
+                        var step = parameter[1];
+                        step = parseInt(step);
+                        document.getElementById('step3').checked=true;
+                        loadMap(1, step);
+                    }else{
+                        loadMap(1,1);
+                    }
+
+
 
                     var heatmap = 1;
                     var time = 1;
