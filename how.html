@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>How can offices be converted?</title>
     <style>
+        body {
+            background-color: #bbdefb;
+        }
         *{margin: 0; padding: 0}
         .panel{
             width: 300px;
@@ -16,9 +19,16 @@
             padding: 20px;
         }
         path{
-            stroke: steelblue;
+            stroke: #00796b;
             stroke-width:2;
             fill:none
+        }
+        .row {
+
+        }
+        .col {
+            background-color: #fff;
+            padding-bottom: 10px !important;
         }
         .axis path,
         .axis line{
@@ -26,6 +36,10 @@
             stroke:grey;
             stroke-width:1;
             shape-rendering: crispEdges;
+        }
+        .svg-container svg {
+            display: block;
+            margin: 0px auto;
         }
 
     </style>
@@ -48,100 +62,123 @@
         <label for="step3">What does the future look like?</label>
     </p>
 </div>
-    <div id="conversionRatio">
-        <h5>How many percent of the offices can be converted?</h5>
+    <div class="row">
+        <div id="conversionRatio" class="col s12 m6 offset-m2 svg-container z-depth-1">
+            <div>
+                <h5 class="center-align">How many percent of the offices can be converted?</h5>
+            </div>
+        </div>
     </div>
-    <div>
-        <h5>How many offices can be converted in Amsterdam?</h5>
-        <svg id="numberOffices" width="400" height="300"></svg>
+    <div class="row">
+        <div class="col s12 m6 offset-m2 svg-container z-depth-1">
+            <h5 class="center-align">How many offices can be converted in Amsterdam?</h5>
+            <svg id="numberOffices" width="400" height="400"></svg>
+        </div>
     </div>
-    <div>
-        <h5>The ideal convertible office space will comply the following requirements:</h5>
-        <table>
-            <tr>
-                <td>Location Requirements</td>
-                <td>Building Requirements</td>
-            </tr>
-            <tr>
-                <td>It should be located in an attractive area.</td>
-                <td>Building or renovation shouldn't have happened recently.</td>
-            </tr>
-            <tr>
-                <td>The land property should be owned, not rented.</td>
-                <td>It should have a nice appearance and be properly maintained.</td>
-            </tr>
-            <tr>
-                <td>The vacancy should be less than one year.</td>
-                <td>It should have options for extensions.</td>
-            </tr>
-            <tr>
-                <td>There should not be too many surrounding vacant buildings.</td>
-                <td>It should have a proper technical structure.</td>
-            </tr>
-            <tr>
-                <td>Various facilities should be close by and of decent facilities.</td>
-                <td>The storey height should be sufficient.</td>
-            </tr>
-            <tr>
-                <td>It should be accessible by public transport.</td>
-                <td>The facade should be acceptible</td>
-            </tr>
-            <tr>
-                <td>It should be accessible by car and have closeby parking places.</td>
-                <td>An accessible and secure entrance should be realisable.</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Sufficient conduits should be realisable.</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>It should provide a healthy living environment.</td>
-            </tr>
-        </table>
+    <div class="row">
+        <div class="col s12 m6 offset-m2 z-depth-1">
+            <h5 class="center-align">The ideal convertible office space will comply the following requirements</h5>
+            <table class="center-align striped centered">
+                <thead>
+                    <tr>
+                        <th>Location Requirements</th>
+                        <th>Building Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>It should be located in an attractive area.</td>
+                        <td>Building or renovation shouldn't have happened recently.</td>
+                    </tr>
+                    <tr>
+                        <td>The land property should be owned, not rented.</td>
+                        <td>It should have a nice appearance and be properly maintained.</td>
+                    </tr>
+                    <tr>
+                        <td>The vacancy should be less than one year.</td>
+                        <td>It should have options for extensions.</td>
+                    </tr>
+                    <tr>
+                        <td>There should not be too many surrounding vacant buildings.</td>
+                        <td>It should have a proper technical structure.</td>
+                    </tr>
+                    <tr>
+                        <td>Various facilities should be close by and of decent facilities.</td>
+                        <td>The storey height should be sufficient.</td>
+                    </tr>
+                    <tr>
+                        <td>It should be accessible by public transport.</td>
+                        <td>The facade should be acceptible</td>
+                    </tr>
+                    <tr>
+                        <td>It should be accessible by car and have closeby parking places.</td>
+                        <td>An accessible and secure entrance should be realisable.</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Sufficient conduits should be realisable.</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>It should provide a healthy living environment.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div>
-        <h5>Required Distances</h5>
-        <table>
-            <tr>
-                <td> <5 Km </td>
-                <td>Basic medical facilities (doctor, pharmacy).</td>
-            </tr>
-            <tr>
-                <td><2 Km </td>
-                <td> Train station.  Sport facilities (fitness, swimming pool, sports park). Educational facilities (nursery, school, university).</td>
-            </tr>
-            <tr>
-                <td><1 Km</td>
-                <td>Bus, metro or tram stop. Shop for daily errands.</td>
-            </tr>
-            <tr>
-                <td><500m</td>
-                <td>Meeting place (cafe, snackbar, etc.).</td>
+    <div class="row">
+        <div class="col s12 m6 offset-m2 z-depth-1">
+            <h5 class="center-align">Required Distances</h5>
+            <table class="striped">
+                <tr>
+                    <td>&lt; 5 Km </td>
+                    <td>Basic medical facilities (doctor, pharmacy).</td>
                 </tr>
-            <tr>
-                <td><250m </td>
-                <td>Parking place.</td>
-            </tr>
-        </table>
+                <tr>
+                    <td>&lt; 2 Km </td>
+                    <td> Train station.  Sport facilities (fitness, swimming pool, sports park). Educational facilities (nursery, school, university).</td>
+                </tr>
+                <tr>
+                    <td>&lt; 1 Km</td>
+                    <td>Bus, metro or tram stop. Shop for daily errands.</td>
+                </tr>
+                <tr>
+                    <td>&lt;500m</td>
+                    <td>Meeting place (cafe, snackbar, etc.).</td>
+                    </tr>
+                <tr>
+                    <td>&lt;250m </td>
+                    <td>Parking place.</td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <div>
-        <5>Cost vs. Earnings</h5>
-        + 20€ - 30€ per m2<br>
-        Earnings when offices are converted to houses
-        + 15€ per m2 <br>
-        Savings for maintaining empty office spaces, energy, ensurances, and vacancy management.
-        <svg id="profitConversion" height="300"></svg>
+    <div class="row">
+        <div class="col s12 m6 offset-m2 svg-container z-depth-1">
+            <h5 class="center-align">Cost vs. Earnings</h5>
+            <h6 class="center-align"><b>+ 20€ - 30€ per m<sup>2</sup></b></h6>
+            <h6 class="center-align">Earnings when offices are converted to houses</h6>
+            <h6 class="center-align"><b>+ 15€ per m<sup>2</sup></b></h6>
+            <h6 class="center-align">Savings for maintaining empty office spaces, energy, ensurances, and vacancy management.</h6>
+            <svg id="profitConversion" height="400" width="400"></svg>
+        </div>
     </div>
-    <div>
-        <h5>Projected companies</h5>
-        <svg id="workerForecast" height="300"></svg>
-        <svg id="companyForecast" height="300"></svg>
+    <div class="row">
+        <div class="col s12 m6 offset-m2 z-depth-1 svg-container">
+            <h5 class="center-align">Projected companies</h5>
+            <h6 class="center-align"><b>Number of Worker</b></h6>
+            <svg id="workerForecast" height="400" width="500"></svg>
+            <hr style="margin:20px 0px;">
+            <h6 class="center-align"><b>Number of Companies</b></h6>
+            <svg id="companyForecast" height="400" width="500"></svg>
+        </div>
     </div>
-    <div>
-        <h5>Security Improvement</h5>
-        15% <br>
-        Increase in violent crimes near vacant buildings. This raise can be prevented by turning the vacant office buildings in occupied homes.
+    <div class="row">
+        <div class="col s12 m6 offset-m2 z-depth-1">
+            <h5 class="center-align">Security Improvement</h5>
+            <h3 class="center-align"><b>15%</b></h3>
+            <p class="center-align">Increase in violent crimes near vacant buildings. This raise can be prevented by turning the vacant office buildings in occupied homes.</p>
+        </div>
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
@@ -154,20 +191,21 @@
             console.log("Building number of offices line chart.");
             buildLineChart("numberOffices", "numberOffices.csv", "m2 per flat", "number of flats");
             console.log("Building profit conversion line chart.");
-            buildLineChart("profitConversion", "profit.csv", "months after conversion", "cost/profit");
+            buildLineChartWide("profitConversion", "profit.csv", "months after conversion", "cost/profit");
             console.log("Building Workers Forecast.");
-            buildLineChart("workerForecast", "workers.csv", "year", "number of workers");
+            buildLineChartWide("workerForecast", "workers.csv", "year", "number of workers");
             console.log("Building Companies Forecast");
-            buildLineChart("companyForecast", "companies.csv", "year", "number of workers");
+            buildLineChartWide("companyForecast", "companies.csv", "year", "number of workers");
 
             function buildConversionRatio() {
                 var w = 200;
                 var h = 200;
                 var r = h / 2;
+                var padding = r + 1;
                 var color = d3.scale.category20c();
 
                 var data = [{"label": "Convertible", "value": 20}, {"label": "Non-convertible", "value": 80}];
-                var vis = d3.select('#conversionRatio').append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")");
+                var vis = d3.select('#conversionRatio').append("svg:svg").data([data]).attr("width", w+1).attr("height", h+1).append("svg:g").attr("transform", "translate(" + padding + "," + padding + ")");
                 var pie = d3.layout.pie().value(function (d) {
                     return d.value;
                 });
@@ -201,9 +239,9 @@
                 // Get the data
                 d3.csv(lineData, function (error, data) {
                     // Set the dimensions of the canvas / graph
-                    var margin = {top: 30, right: 20, bottom: 30, left: 100},
-                            width = 300 - margin.left - margin.right,
-                            height = 300 - margin.top - margin.bottom;
+                    var margin = {top: 30, right: 20, bottom: 30, left: 80},
+                            width = 400 - margin.left - margin.right,
+                            height = 400 - margin.top - margin.bottom;
 
                     // Set the ranges
                     var xScale = d3.scale.linear().range([0, width])
@@ -224,6 +262,94 @@
                     var xAxis = d3.svg.axis().scale(xScale)
                             .tickSize(10)
                             .tickSubdivide(false);
+                    var yAxis = d3.svg.axis().scale(yScale)
+                            .tickSize(5)
+                            .orient('left')
+                            .tickSubdivide(true);
+
+                    // Define the line
+                    var costline = d3.svg.line()
+                            .x(function (d) {
+                                return xScale(d.x);
+                            })
+                            .y(function (d) {
+                                return yScale(d.y);
+                            })
+                    //.interpolate('linear');
+
+
+                    // Adds the svg canvas
+                    var svg = d3.select("#" + chartName)
+                            .append("svg")
+                            .attr("width", width + margin.left + margin.right)
+                            .attr("height", height + margin.top + margin.bottom)
+                            .append("g")
+                            .attr("transform",
+                            "translate(" + margin.left + "," + margin.top + ")");
+
+                    // Nest the entries by symbol
+                    var dataNest = d3.nest()
+                            .key(function (d) {
+                                return d.symbol;
+                            })
+                            .entries(data);
+
+                    console.log(dataNest);
+                    // Loop through each symbol / key
+                    dataNest.forEach(function (d) {
+                        svg.append("path")
+                                .attr("class", "line")
+                                .attr("d", costline(d.values));
+                    });
+
+                    // Add the X Axis
+                    svg.append("g")
+                            .attr("class", "x axis")
+                            .attr("transform", "translate(0," + height + ")")
+                            .call(xAxis);
+                    svg.append("text")      // text label for the x axis
+                            //.attr("x", 265 )
+                            //.attr("y",  240 )
+                            .style("text-anchor", "middle")
+                            .text(xLabel);
+
+                    // Add the Y Axis
+                    svg.append("g")
+                            .attr("class", "y axis")
+                            .call(yAxis);
+
+                });
+
+
+            }
+            function buildLineChartWide(chartName, lineData, xLabel, yLabel) {
+                // Get the data
+                d3.csv(lineData, function (error, data) {
+                    // Set the dimensions of the canvas / graph
+                    var margin = {top: 30, right: 20, bottom: 30, left: 80},
+                            width = 500 - margin.left - margin.right,
+                            height = 400 - margin.top - margin.bottom;
+
+                    // Set the ranges
+                    var xScale = d3.scale.linear().range([0, width])
+                            .domain([d3.min(data, function (d) {
+                                return +d.x;
+                            }), d3.max(data, function (d) {
+                                return+ d.x;
+                            })]);
+
+                    var yScale = d3.scale.linear().range([height, 0])
+                            .domain([d3.min(data, function (d) {
+                                return +d.y;
+                            }), d3.max(data, function (d) {
+                                return +d.y;
+                            })]);;
+
+                    // Define the axes
+                    var xAxis = d3.svg.axis().scale(xScale)
+                            .tickSize(10)
+                            .tickSubdivide(false)
+                            .tickFormat(d3.format("d"));
                     var yAxis = d3.svg.axis().scale(yScale)
                             .tickSize(5)
                             .orient('left')
