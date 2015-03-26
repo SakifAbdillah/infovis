@@ -191,8 +191,8 @@
 	                	}
 	                });
 
-                    var economicActivityScale = d3.scale.linear().domain([minEconomicActivity, maxEconomicActivity]).range(["white", "green","yellow", "orange", "red","black"]);
-                    var economicActivityScaleFuture = d3.scale.linear().domain([minEconomicActivityFuture, maxEconomicActivityFuture]).range(["white", "green","yellow", "orange", "red","black"]);
+                    var economicActivityScale = d3.scale.linear().domain([minEconomicActivity, maxEconomicActivity]).range(["white", "green"]);
+                    var economicActivityScaleFuture = d3.scale.linear().domain([minEconomicActivityFuture, maxEconomicActivityFuture]).range(["white","green"]);
                     var securityScale = d3.scale.linear().domain([minSecurity, maxSecurity]).range(["white","red"]);
                     var securityScaleFuture = d3.scale.linear().domain([minSafetyFuture, maxSafetyFuture]).range(["white","red"]);
                     var emptySpaceScale = d3.scale.linear().domain([minEmptySpace, maxEmptySpace]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);

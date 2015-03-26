@@ -236,6 +236,7 @@
             }
 
             function buildLineChart(chartName, lineData, xLabel, yLabel) {
+                console.log(xLabel + "y: " + yLabel);
                 // Get the data
                 d3.csv(lineData, function (error, data) {
                     // Set the dimensions of the canvas / graph
@@ -293,7 +294,7 @@
                                 return d.symbol;
                             })
                             .entries(data);
-
+                    console.log(xLabel + " y: " + yLabel);
                     console.log(dataNest);
                     // Loop through each symbol / key
                     dataNest.forEach(function (d) {
@@ -307,16 +308,22 @@
                             .attr("class", "x axis")
                             .attr("transform", "translate(0," + height + ")")
                             .call(xAxis);
-                    svg.append("text")      // text label for the x axis
-                            //.attr("x", 265 )
-                            //.attr("y",  240 )
-                            .style("text-anchor", "middle")
-                            .text(xLabel);
+                    console.log(xLabel + "y: " + yLabel);
+                    //svg.append("text")      // text label for the x axis
+                      //      .attr("x", (width / 2))
+                        //    .attr("y", height)
+                          //  .style("text-anchor", "middle")
+                            //.text(xLabel);
 
                     // Add the Y Axis
                     svg.append("g")
                             .attr("class", "y axis")
                             .call(yAxis);
+                    svg.append("text")      // text label for the x axis
+                        //.attr("x", 265 )
+                        //.attr("y",  240 )
+                            .style("text-anchor", "middle")
+                            .text(yLabel);
 
                 });
 
@@ -399,7 +406,12 @@
                             //.attr("x", 265 )
                             //.attr("y",  240 )
                             .style("text-anchor", "middle")
-                            .text(xLabel);
+                            .text(yLabel);
+                    svg.append("text")      // text label for the x axis
+                        //.attr("x", 265 )
+                        //.attr("y",  240 )
+                            .style("text-anchor", "middle")
+                            .text(yLabel);
 
                     // Add the Y Axis
                     svg.append("g")
