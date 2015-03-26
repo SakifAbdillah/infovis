@@ -14,12 +14,21 @@
 		background-color: #fff;
 		padding: 20px;
 	}
+    .text{
+        width: 300px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 9999;
+        background-color: #fff;
+        padding: 20px;
+    }
 	</style>
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">
 </head>
 <body>
-	<div class="panel">
+	<div class="panel" id="popup">
 	<!--	</div>
     <div class="panel">-->
         <h6>Step</h6>
@@ -35,6 +44,7 @@
             <input type="radio" value="what" class="selection" name="selectionTime" id="step3"/>
             <label for="step3">What does the future look like?</label>
         </p>
+        <br>
         <h6>Heatmap Selector</h6>
         <p>
             <input type="radio" value="security" class="selection" name="selection" id="radio1" checked/>
@@ -48,7 +58,10 @@
             <input type="radio" value="economicActivity" class="selection" name="selection" id="radio3"/>
             <label for="radio3">Economic Activity</label>
         </p>
+        <br>
+        <p id="explanation"></p>
     </div>
+
     <div id="map-canvas"></div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANln09l2wflbNzL5kXlOkb4cuURGYMlvs"></script>
@@ -59,6 +72,14 @@
         var scales;
         var areasArray = [];
         var map;
+
+        var explanations =[];
+        var expl1 = "This is a heatmap of Amsterdam that shows you the security problems. The redder the area, the more crimes. The red rectangle shows the amount of empty offices.";
+        var expl2 = "";
+        var expl3 = "This is a heatmap of Amsterdam that shows you the economic activity. The greener the area, the more economic activity. The red rectangle shows the amount of empty offices.";
+        explanations.push(expl1);
+        explanations.push(expl2);
+        explanations.push(expl3);
 
 		window.onload = function(){
             console.log("window loaded");
@@ -255,6 +276,8 @@
             console.log("Load Heatmap " + heatmap + ", " + time);
             if(time===3){ displayVisualizations();
                 return;}
+            console.log(explanations[heatmap-1]);
+            $( "#explanation" ).html( explanations[heatmap-1]);
             map.data.setStyle(function(feature) {
                 var thisAreaCode = feature.getProperty('sdbc');
                 var parameterValue;
@@ -266,7 +289,6 @@
                 }
                 var scale = scales[time-1][heatmap-1];
                 var color = scale(parameterValue);
-                console.log(color);
                 return {
                     fillColor: color,
                     fillOpacity: 0.7
