@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d47fb6e1-20be-4707-905a-91493cc53e02" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/areadata.json" afterPath="$PROJECT_DIR$/areadata.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="infovis.iws" />
@@ -30,15 +31,15 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0385756" vertical-offset="1452" max-vertical-offset="3774">
-              <caret line="166" column="72" selection-start-line="166" selection-start-column="72" selection-end-line="166" selection-end-column="72" />
+            <state vertical-scroll-proportion="0.72131145" vertical-offset="1963" max-vertical-offset="3808">
+              <caret line="196" column="165" selection-start-line="196" selection-start-column="165" selection-end-line="196" selection-end-column="165" />
               <folding>
                 <element signature="e#162#292#0" expanded="false" />
                 <element signature="e#2418#3939#0" expanded="false" />
                 <element signature="e#4149#4180#0" expanded="false" />
                 <element signature="e#4475#4524#0" expanded="false" />
                 <element signature="e#4579#4626#0" expanded="false" />
-                <element signature="e#7727#7889#0" expanded="false" />
+                <element signature="e#7735#7897#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -47,48 +48,8 @@
       <file leaf-file-name="areadata.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/areadata.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6923075" vertical-offset="17082" max-vertical-offset="17663">
-              <caret line="1012" column="6" selection-start-line="1012" selection-start-column="6" selection-end-line="1012" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="how.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/how.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5533" max-vertical-offset="7429">
-              <caret line="177" column="45" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profit.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/profit.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="289">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workers.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workers.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="323">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="numberOffices.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/numberOffices.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="272">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            <state vertical-scroll-proportion="-50.872726" vertical-offset="14763" max-vertical-offset="17663">
+              <caret line="1033" column="0" selection-start-line="1033" selection-start-column="0" selection-end-line="1033" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,8 +71,8 @@
         <option value="$PROJECT_DIR$/companies.csv" />
         <option value="$PROJECT_DIR$/numberOffices.csv" />
         <option value="$PROJECT_DIR$/how.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/areadata.json" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -166,14 +127,10 @@
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <method />
-    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -181,6 +138,10 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -236,18 +197,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23988006" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31811023" sideWeight="0.78110945" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31811023" sideWeight="0.78110945" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.450727" sideWeight="0.21889055" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -265,9 +226,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23988006" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -297,7 +258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="272">
           <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -311,7 +271,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -320,7 +280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="521" max-vertical-offset="5236">
           <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -334,7 +293,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -350,7 +309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4318">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -371,7 +329,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -380,7 +338,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -401,7 +358,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -423,7 +380,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -450,7 +407,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -479,7 +436,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -508,7 +465,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -537,7 +494,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -566,7 +523,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -595,7 +552,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -624,7 +581,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -653,7 +610,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -675,7 +632,7 @@
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -720,57 +677,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/numberOffices.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/workers.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
           <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/profit.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+        <state vertical-scroll-proportion="0.04197531" vertical-offset="0" max-vertical-offset="405">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/numberOffices.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12592593" vertical-offset="0" max-vertical-offset="405">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/how.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5533" max-vertical-offset="7429">
+        <state vertical-scroll-proportion="77.53846" vertical-offset="5025" max-vertical-offset="7429">
           <caret line="177" column="45" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/areadata.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6923075" vertical-offset="17082" max-vertical-offset="17663">
-          <caret line="1012" column="6" selection-start-line="1012" selection-start-column="6" selection-end-line="1012" selection-end-column="6" />
+        <state vertical-scroll-proportion="-50.872726" vertical-offset="14763" max-vertical-offset="17663">
+          <caret line="1033" column="0" selection-start-line="1033" selection-start-column="0" selection-end-line="1033" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0385756" vertical-offset="1452" max-vertical-offset="3774">
-          <caret line="166" column="72" selection-start-line="166" selection-start-column="72" selection-end-line="166" selection-end-column="72" />
+        <state vertical-scroll-proportion="0.72131145" vertical-offset="1963" max-vertical-offset="3808">
+          <caret line="196" column="165" selection-start-line="196" selection-start-column="165" selection-end-line="196" selection-end-column="165" />
           <folding>
             <element signature="e#162#292#0" expanded="false" />
             <element signature="e#2418#3939#0" expanded="false" />
             <element signature="e#4149#4180#0" expanded="false" />
             <element signature="e#4475#4524#0" expanded="false" />
             <element signature="e#4579#4626#0" expanded="false" />
-            <element signature="e#7727#7889#0" expanded="false" />
+            <element signature="e#7735#7897#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -162,7 +162,7 @@
                         if(area.safetyFuture < minSafetyFuture)
                             minSafetyFuture = area.safetyFuture;
                         else if(area.safetyFuture > maxSafetyFuture)
-                            maxSecurity = area.security;
+                            maxSafetyFuture = area.safetyFuture;
                         if(area.economicActivity < minEconomicActivity)
                             minEconomicActivity = area.economicActivity;
                         else if(area.economicActivity > maxEconomicActivity)
@@ -193,12 +193,12 @@
 
                     var economicActivityScale = d3.scale.linear().domain([minEconomicActivity, maxEconomicActivity]).range(["white", "green","yellow", "orange", "red","black"]);
                     var economicActivityScaleFuture = d3.scale.linear().domain([minEconomicActivityFuture, maxEconomicActivityFuture]).range(["white", "green","yellow", "orange", "red","black"]);
-                    var securityScale = d3.scale.linear().domain([minSecurity, maxSecurity]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
-                    var securityScaleFuture = d3.scale.linear().domain([minSafetyFuture, maxSafetyFuture]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
+                    var securityScale = d3.scale.linear().domain([minSecurity, maxSecurity]).range(["white", "green","yellow", "orange", "red","black"]);
+                    var securityScaleFuture = d3.scale.linear().domain([minSafetyFuture, maxSafetyFuture]).range(["white", "green","yellow", "orange", "red","black"]);
                     var emptySpaceScale = d3.scale.linear().domain([minEmptySpace, maxEmptySpace]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
                     var emptySpaceScaleFuture = d3.scale.linear().domain([minEmptySpaceFuture, maxEmptySpaceFuture]).range(["#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"]);
 
-                    scales = [[securityScale, emptySpaceScale, economicActivityScale], [securityScaleFuture, maxEmptySpaceFuture, economicActivityScaleFuture]];
+                    scales = [[securityScale, emptySpaceScale, economicActivityScale], [securityScaleFuture, emptySpaceScaleFuture, economicActivityScaleFuture]];
 
 	                $.each(data.areas, function (i, area) {
 	                	//console.log(area);
@@ -211,6 +211,7 @@
                     if(typeof parameter[1]=== "string"){
                         var step = parameter[1];
                         step = parseInt(step);
+                        if(step==2)
                         document.getElementById('step3').checked=true;
                         loadMap(1, step);
                     }else{
@@ -265,6 +266,7 @@
                 }
                 var scale = scales[time-1][heatmap-1];
                 var color = scale(parameterValue);
+                console.log(color);
                 return {
                     fillColor: color,
                     fillOpacity: 0.7
